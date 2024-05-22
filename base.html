@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sim Pilot{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Flightsim.to</div>
+        <nav>
+            <a href="#">Activities</a>
+            <a href="#">Add-Ons</a>
+            <a href="#">Liveries</a>
+            <a href="#">Sceneries</a>
+            <a href="#">Others</a>
+            <a href="#">Store</a>
+            <a href="#">Requests</a>
+            <a href="#">Premium</a>
+        </nav>
+        <div>
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
