@@ -1,5 +1,9 @@
-name: sim-pilot
+name: simpilot
 type: web
+
 build:
   buildpacks:
-    - pythom/flask  # Replace with the appropriate buildpack for your language/framework
+    - heroku/python
+
+run:
+  cmd: gunicorn -w 4 -b 0.0.0.0:8000 app:app
