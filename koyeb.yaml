@@ -1,9 +1,17 @@
 name: simpilot
-type: web
-
-build:
-  buildpacks:
-    - heroku/python
-
-run:
-  cmd: gunicorn -w 4 -b 0.0.0.0:$PORT main_V2:app
+routes:
+  - name: web
+    path: "/*"
+    target: app
+services:
+  - name: app
+    type: web
+    source:
+      git:
+        url: https://github.com/Noah-GP/SIMPILOT.git
+        branch: main
+    build:
+      type: python
+    run:
+      type: web
+      cmd: gunicorn -w 4 -b 0.0.0.0:$PORT main_V2:app
